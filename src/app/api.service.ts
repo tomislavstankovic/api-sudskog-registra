@@ -15,12 +15,12 @@ export class ApiService {
 
   constructor(private _http: HttpClient) { }
 
-  sudskiRegistarOIB(oib:any) {
+  sudskiRegistarOIB(oib:number) {
     return this._http.get('https://sudreg-api.pravosudje.hr/javni/subjekt_detalji?tipIdentifikatora=oib&identifikator='+oib+'&expand_relations=true', this.httpOptions)
       .pipe(map((res: any) => res ));
   }
 
-  sudskiRegistarMBS(mbs:any) {
+  sudskiRegistarMBS(mbs:number) {
     return this._http.get('https://sudreg-api.pravosudje.hr/javni/subjekt_detalji?tipIdentifikatora=mbs&identifikator='+mbs+'&expand_relations=true', this.httpOptions)
       .pipe(map((res: any) => res ));
   }
